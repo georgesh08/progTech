@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:oxy="http://oxyplot.org/avalonia"
+        x:Class="AvaloniaInterface.MainWindow"
+        Title="GeneticAlgo.GraphicalInterface">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <oxy:PlotView Grid.Row="0" Model="{Binding ScatterModel}" />
+        <oxy:PlotView Grid.Row="1" Model="{Binding BarModel}" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Content="Run" Name="Run" IsVisible="{Binding !IsRunning}" Width="75" Margin="6,4,6,4" Click="Run_OnClick" />
+            <Button Content="Stop" Name="Stop" IsVisible="{Binding IsRunning}" Width="75" Margin="6,4,6,4" Click="Stop_OnClick" />
+        </StackPanel>
+    </Grid>
+</Window>
